@@ -11,6 +11,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { masterFirebaseConfig } from './api-keys';
 import { PublicComponent } from './public/public.component';
 import { PrivateComponent } from './private/private.component';
+import { AuthenticationService } from './authentication.service';
+import { AuthGuardService } from './auth-guard.service';
 
 
 export const firebaseConfig = {
@@ -36,7 +38,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     routing
   ],
-  providers: [],
+  providers: [AuthenticationService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
